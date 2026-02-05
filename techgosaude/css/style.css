@@ -1396,7 +1396,7 @@ html:not(.dark) .bg-gradient-to-br.from-slate-950.via-slate-900.to-slate-800 {
 }
 
 html:not(.dark) .text-white {
-    color: #0f172a !important;
+    color: #ffffff !important;
 }
 
 html:not(.dark) .text-white\/70 {
@@ -1508,4 +1508,5 @@ html:not(.dark) .bg-emerald-400 {
     background: #0f172a;
     border-bottom-color: var(--tg-border-soft);
 }
+
 
