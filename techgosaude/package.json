@@ -1,0 +1,17 @@
+{
+  "name": "techfisio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.output.css",
+    "watch:css": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@supabase/supabase-js": "^2.94.0",
+    "chart.js": "^4.5.1"
+  }
+}

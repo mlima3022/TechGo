@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGoSaude - Gest&atilde;o para profissionais de sa&uacute;de</title>
+    <meta name="description" content="Plataforma completa para profissionais de sa&uacute;de aut&ocirc;nomos">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 rx=%227%22 ry=%227%22 fill=%22%232563eb%22/%3E%3Cpath d=%22M16 7v18M7 16h18%22 stroke=%22white%22 stroke-width=%222.2%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+    
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="css/tailwind.output.css">
+    
+    <!-- Font Awesome (local) -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js (local) -->
+    <script src="vendor/chartjs/chart.umd.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+        <style>
+        .login-hero {
+            background: radial-gradient(circle at top left, rgba(59,130,246,0.15), transparent 55%),
+                        linear-gradient(135deg, #0f172a 0%, #0b1f36 45%, #081728 100%);
+            color: #f8fafc;
+        }
+        .login-hero .login-muted {
+            color: rgba(248, 250, 252, 0.92);
+        }
+        .login-hero .login-card {
+            background: rgba(10, 18, 35, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+        }
+        .login-hero h2 {
+            color: #f8fafc;
+            text-shadow: 0 2px 10px rgba(15, 23, 42, 0.6);
+        }
+        .login-hero p {
+            color: rgba(226, 232, 240, 0.92);
+        }
+        .login-hero .feature-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+        }
+        .login-hero .feature-card .title {
+            color: rgba(226, 232, 240, 0.85);
+        }
+        .login-hero .feature-card .value {
+            color: #f8fafc;
+        }
+        .login-hero .feature-list {
+            color: rgba(226, 232, 240, 0.95);
+        }
+    </style>
+    
+    <!-- Tailwind config moved to tailwind.config.js -->
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-white bg-opacity-90 flex items-center justify-center z-50 hidden" style="display:none;">
+        <div class="flex flex-col items-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mb-4"></div>
+            <p class="text-gray-600">Carregando...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    
+
+    <!-- Main Content -->
+    <main id="mainContent" class="min-h-screen">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#0b2a4a] to-[#0b4a6f] text-white flex items-center justify-center p-4 login-hero">
+            <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="p-8 lg:p-10 bg-slate-900/70 rounded-3xl border border-white/10 backdrop-blur login-card">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="h-12 w-12 rounded-2xl bg-white/15 flex items-center justify-center">
+                            <i class="fas fa-user-md text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-display font-semibold">TechGoSaude</div>
+                            <div class="text-sm login-muted title">Gest&atilde;o moderna para profissionais de sa&uacute;de aut&ocirc;nomos</div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-3xl font-display font-semibold mb-4 text-white">Organize atendimentos, evolu&ccedil;&otilde;es e finan&ccedil;as em um s&oacute; lugar</h2>
+                    <p class="text-white/85 mb-6 login-muted">
+                        Fluxo completo para o dia a dia do atendimento em sa&uacute;de: pacientes, agenda, anamnese, evolu&ccedil;&otilde;es e exames.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="feature-card rounded-2xl p-4">
+                            <div class="text-sm login-muted title">Plano gratuito</div>
+                            <div class="text-xl font-semibold value">At&eacute; 4 pacientes</div>
+                        </div>
+                        <div class="feature-card rounded-2xl p-4">
+                            <div class="text-sm login-muted title">Plano Pro</div>
+                            <div class="text-xl font-semibold value">R$ 7,99/m&ecirc;s</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm feature-list">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-300 mt-1 mr-2"></i>
+                            Prontu&aacute;rios com anamnese, evolu&ccedil;&otilde;es e exames.
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-300 mt-1 mr-2"></i>
+                            Upload seguro de exames no Supabase Storage.
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-300 mt-1 mr-2"></i>
+                            Financeiro, agenda e relat&oacute;rios profissionais.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 text-gray-900">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-display font-semibold">Acessar sua conta</h3>
+                        <p class="text-gray-600 mt-1">Entre para continuar ou crie sua conta em segundos.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <button id="googleLoginButton" class="w-full flex items-center justify-center px-4 py-3 border border-gray-200 rounded-xl shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            <img class="h-5 w-5 mr-3" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+                            Continuar com Google
+                        </button>
+
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-200"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-white text-gray-500">ou</span>
+                            </div>
+                        </div>
+
+                        <form id="emailLoginForm" class="space-y-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                            </div>
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+                                <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                            </div>
+                            <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-xl shadow-sm text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                Entrar
+                            </button>
+                            <button type="button" id="showRegisterButton" class="w-full text-sm text-primary-600 hover:text-primary-700">
+                                Criar uma conta
+                            </button>
+                        </form>
+
+                        <form id="registerForm" class="space-y-4 hidden">
+                            <div>
+                                <label for="registerName" class="block text-sm font-medium text-gray-700">Nome</label>
+                                <input type="text" id="registerName" name="registerName" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                            </div>
+                            <div>
+                                <label for="registerProfession" class="block text-sm font-medium text-gray-700">Profiss&atilde;o</label>
+                                <select id="registerProfession" name="registerProfession" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                    <option value="">Selecione...</option>
+                                    <option value="Fisioterapeuta">Fisioterapeuta</option>
+                                    <option value="Psicologo">Psic&oacute;logo</option>
+                                    <option value="Nutricionista">Nutricionista</option>
+                                    <option value="Fonoaudiologo">Fonoaudi&oacute;logo</option>
+                                    <option value="Terapeuta Ocupacional">Terapeuta Ocupacional</option>
+                                    <option value="Enfermeiro">Enfermeiro(a)</option>
+                                    <option value="Medico">M&eacute;dico(a)</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div id="registerProfessionOtherWrap" class="hidden">
+                                <label for="registerProfessionOther" class="block text-sm font-medium text-gray-700">Qual?</label>
+                                <input type="text" id="registerProfessionOther" name="registerProfessionOther" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" placeholder="Digite sua profiss&atilde;o">
+                            </div>
+                            <div>
+                                <label for="registerEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="registerEmail" name="registerEmail" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                            </div>
+                            <div>
+                                <label for="registerPassword" class="block text-sm font-medium text-gray-700">Senha</label>
+                                <input type="password" id="registerPassword" name="registerPassword" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                            </div>
+                            <div>
+                                <label for="registerPasswordConfirm" class="block text-sm font-medium text-gray-700">Confirmar Senha</label>
+                                <input type="password" id="registerPasswordConfirm" name="registerPasswordConfirm" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                            </div>
+                            <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-xl shadow-sm text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                Criar conta
+                            </button>
+                            <button type="button" id="showLoginButton" class="w-full text-sm text-primary-600 hover:text-primary-700">
+                                Já tenho conta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Content (hidden by default) -->
+        </main>
+
+    <!-- Scripts -->
+    <!-- Supabase (local) -->
+    <script src="vendor/supabase/supabase.js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

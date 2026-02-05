@@ -1,0 +1,2 @@
+﻿nome,cpf,data_nascimento,sexo,telefone,telefone_secundario,email,endereco,bairro,cidade,estado,cep,referencia,alergias,medicacoes,observacoes
+Exemplo Paciente,000.000.000-00,1990-01-20,F,(11) 99999-9999,,paciente@email.com,Rua Exemplo 123,Bairro Central,Sao Paulo,SP,01000-000,Proximo ao hospital,,,

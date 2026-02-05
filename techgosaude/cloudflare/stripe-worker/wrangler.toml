@@ -1,0 +1,14 @@
+﻿name = "techfisio-stripe"
+main = "worker.js"
+compatibility_date = "2024-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+SUPABASE_URL = "https://osyuhlpjtgkxdgfwjnhm.supabase.co"
+SUPABASE_ANON_KEY = "sb_publishable_ujd2-I65qXjZXVj00AltUQ_FBdNNYqb"
+STRIPE_PRICE_ID = "price_1Sx7hO1bltAOjhDbnIsDerTy"
+STRIPE_SUCCESS_URL = "https://mlima3022.github.io/TechGo/techgosaude/dashboard.html?checkout=success#dashboard"
+STRIPE_CANCEL_URL = "https://mlima3022.github.io/TechGo/techgosaude/dashboard.html?checkout=cancel#dashboard"
+WEB_ORIGIN = "https://mlima3022.github.io"
+
+
